@@ -6,5 +6,5 @@ import requests
 
 msg = { "text": "Hello This Is Engy From Python"}
 
-webhook ='https://hooks.slack.com/services/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'
+webhook ='WEBHOOK_TOKEN'
 requests.post(webhook, data = json.dumps(msg))                        
