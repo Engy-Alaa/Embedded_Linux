@@ -1,11 +1,10 @@
-#!/usr/bin/env python3
-import serial
-import time
-if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-    ser.reset_input_buffer()
-    while True:
-        ser.write(b"Hello from Raspberry Pi!\n")
-        line = ser.readline().decode('utf-8').rstrip()
-        print(line)
-        time.sleep(1)
+"""
+A simple slack message sender
+"""
+import json
+import requests
+
+msg = { "text": "Hello This Is Engy From Python"}
+
+webhook ='WEBHOOK_TOKEN'
+requests.post(webhook, data = json.dumps(msg))    
